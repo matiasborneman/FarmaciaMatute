@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFB6FDB6-D20F-4192-9A82-CE1F8835278E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Farmacia_Matute</RootNamespace>
+    <AssemblyName>Farmacia_Matute-demo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>farmacia_logo %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Capa_Presentacion_Formularios\Clientes\Frm_datos_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Clientes\Frm_datos_clientes.Designer.cs">
+      <DependentUpon>Frm_datos_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_medicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_medicamentos.Designer.cs">
+      <DependentUpon>Frm_medicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\DS_Clientes_Ob_Soc_01.cs">
+      <DependentUpon>DS_Clientes_Ob_Soc_01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\DS_Clientes_Ob_Soc_01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Clientes_Ob_Soc_01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\DS_Lab_Medic01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Lab_Medic01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadisticas_Lab_Prod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadisticas_Lab_Prod.Designer.cs">
+      <DependentUpon>Frm_Estadisticas_Lab_Prod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasCompras.Designer.cs">
+      <DependentUpon>Frm_EstadisticasCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasVentas.Designer.cs">
+      <DependentUpon>Frm_EstadisticasVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_FacturasCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ds_FacturasVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadistica_Clientes_X_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadistica_Clientes_X_OS.Designer.cs">
+      <DependentUpon>Frm_Estadistica_Clientes_X_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReporteCompras.Designer.cs">
+      <DependentUpon>Frm_ReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesClientes.Designer.cs">
+      <DependentUpon>Frm_ReportesClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesVentas.Designer.cs">
+      <DependentUpon>Frm_ReportesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Reporte_Medic_Lab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Reportes\Frm_Reporte_Medic_Lab.Designer.cs">
+      <DependentUpon>Frm_Reporte_Medic_Lab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Ventas\Frm_FacturaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Ventas\Frm_FacturaVenta.Designer.cs">
+      <DependentUpon>Frm_FacturaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Compras\Frm_FacturaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Compras\Frm_FacturaCompra.Designer.cs">
+      <DependentUpon>Frm_FacturaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_barrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_barrios.Designer.cs">
+      <DependentUpon>Frm_barrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_localidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_localidad.Designer.cs">
+      <DependentUpon>Frm_localidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_telefonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Configuracion\Frm_telefonos.Designer.cs">
+      <DependentUpon>Frm_telefonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_datos_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_datos_empleado.Designer.cs">
+      <DependentUpon>Frm_datos_empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_usuario.Designer.cs">
+      <DependentUpon>Frm_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Farmacia\Frm_datos_farmacia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Farmacia\Frm_datos_farmacia.Designer.cs">
+      <DependentUpon>Frm_datos_farmacia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Laboratorio\Frm_datos_laboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Laboratorio\Frm_datos_laboratorio.Designer.cs">
+      <DependentUpon>Frm_datos_laboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_drogas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_drogas.Designer.cs">
+      <DependentUpon>Frm_drogas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_unidad_medida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Medicamentos\Frm_unidad_medida.Designer.cs">
+      <DependentUpon>Frm_unidad_medida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Obras sociales\Frm_obra_social.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Obras sociales\Frm_obra_social.Designer.cs">
+      <DependentUpon>Frm_obra_social.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Obras sociales\Frm_tipo_cobertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Obras sociales\Frm_tipo_cobertura.Designer.cs">
+      <DependentUpon>Frm_tipo_cobertura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Pagina Principal\Frm_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Pagina Principal\Frm_Home.Designer.cs">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Empleados\Frm_login.Designer.cs">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Stock\Frm_gestion_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa_Presentacion_Formularios\Stock\Frm_gestion_stock.Designer.cs">
+      <DependentUpon>Frm_gestion_stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Be_BaseDatos.cs" />
+    <Compile Include="Clases\ComboBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\EstructuraComboBox.cs" />
+    <Compile Include="Clases\Grid01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\LabelText01.Designer.cs">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\TextBox01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\TratamientosEspeciales.cs" />
+    <Compile Include="Negocios\EstructurasNegocios\Es_Empleado.cs" />
+    <Compile Include="Negocios\EstructurasNegocios\Es_Paciente.cs" />
+    <Compile Include="Negocios\EstructurasNegocios\Es_Users.cs" />
+    <Compile Include="Negocios\Ng_ControlStock.cs" />
+    <Compile Include="Negocios\Ng_FacturasVentas.cs" />
+    <Compile Include="Negocios\Ng_FacturasCompras.cs" />
+    <Compile Include="Negocios\Ng_Laboratorios.cs" />
+    <Compile Include="Negocios\Ng_Farmacias.cs" />
+    <Compile Include="Negocios\Ng_Medicamentos.cs" />
+    <Compile Include="Negocios\Ng_Localidades.cs" />
+    <Compile Include="Negocios\Ng_ObrasSociales.cs" />
+    <Compile Include="Negocios\Ng_Empleados_Pacientes.cs" />
+    <Compile Include="Negocios\Ng_Perfiles.cs" />
+    <Compile Include="Negocios\Ng_Barrios.cs" />
+    <Compile Include="Negocios\Ng_TiposFactura.cs" />
+    <Compile Include="Negocios\Ng_TiposDoc.cs" />
+    <Compile Include="Negocios\Ng_Users.cs" />
+    <Compile Include="Negocios\Ng_OrdenDePedido.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Clientes\Frm_datos_clientes.resx">
+      <DependentUpon>Frm_datos_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Medicamentos\Frm_medicamentos.resx">
+      <DependentUpon>Frm_medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadisticas_Lab_Prod.resx">
+      <DependentUpon>Frm_Estadisticas_Lab_Prod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasCompras.resx">
+      <DependentUpon>Frm_EstadisticasCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_EstadisticasVentas.resx">
+      <DependentUpon>Frm_EstadisticasVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_Estadistica_Clientes_X_OS.resx">
+      <DependentUpon>Frm_Estadistica_Clientes_X_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_ReporteCompras.resx">
+      <DependentUpon>Frm_ReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesClientes.resx">
+      <DependentUpon>Frm_ReportesClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_ReportesVentas.resx">
+      <DependentUpon>Frm_ReportesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Frm_Reporte_Medic_Lab.resx">
+      <DependentUpon>Frm_Reporte_Medic_Lab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\ReporteVentas.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\ReporteCompras1.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Clientes_Ob_Soc_01.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Estadisticas_Compras1.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Estadisticas_Ventas1.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Estadistica_Laoratorios_x_Productos.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Estad_Client_x_OS.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Reportes\Reporte_Lab_Medic01.rdlc" />
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Ventas\Frm_FacturaVenta.resx">
+      <DependentUpon>Frm_FacturaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Compras\Frm_FacturaCompra.resx">
+      <DependentUpon>Frm_FacturaCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Configuracion\Frm_barrios.resx">
+      <DependentUpon>Frm_barrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Configuracion\Frm_localidad.resx">
+      <DependentUpon>Frm_localidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Configuracion\Frm_telefonos.resx">
+      <DependentUpon>Frm_telefonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Empleados\Frm_datos_empleado.resx">
+      <DependentUpon>Frm_datos_empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Empleados\Frm_login.resx">
+      <DependentUpon>Frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Empleados\Frm_usuario.resx">
+      <DependentUpon>Frm_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Farmacia\Frm_datos_farmacia.resx">
+      <DependentUpon>Frm_datos_farmacia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Laboratorio\Frm_datos_laboratorio.resx">
+      <DependentUpon>Frm_datos_laboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Medicamentos\Frm_drogas.resx">
+      <DependentUpon>Frm_drogas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Medicamentos\Frm_unidad_medida.resx">
+      <DependentUpon>Frm_unidad_medida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Obras sociales\Frm_obra_social.resx">
+      <DependentUpon>Frm_obra_social.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Obras sociales\Frm_tipo_cobertura.resx">
+      <DependentUpon>Frm_tipo_cobertura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Pagina Principal\Frm_Home.resx">
+      <DependentUpon>Frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa_Presentacion_Formularios\Stock\Frm_gestion_stock.resx">
+      <DependentUpon>Frm_gestion_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clases\LabelText01.resx">
+      <DependentUpon>LabelText01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Clientes_Ob_Soc_01.xsc">
+      <DependentUpon>DS_Clientes_Ob_Soc_01.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Clientes_Ob_Soc_01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Clientes_Ob_Soc_01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Clientes_Ob_Soc_01.xss">
+      <DependentUpon>DS_Clientes_Ob_Soc_01.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasCompras.xsc">
+      <DependentUpon>Ds_FacturasCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_FacturasCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasCompras.xss">
+      <DependentUpon>Ds_FacturasCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasVentas.xsc">
+      <DependentUpon>Ds_FacturasVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Ds_FacturasVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\Ds_FacturasVentas.xss">
+      <DependentUpon>Ds_FacturasVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Lab_Medic01.xsc">
+      <DependentUpon>DS_Lab_Medic01.xsd</DependentUpon>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Lab_Medic01.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Lab_Medic01.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capa_Presentacion_Formularios\Reportes\DS_Lab_Medic01.xss">
+      <DependentUpon>DS_Lab_Medic01.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="farmacia_logo %281%29.ico" />
+    <Content Include="Imagenes\agregar.jpg" />
+    <Content Include="Imagenes\buscar.png" />
+    <Content Include="Imagenes\descarga.jpg" />
+    <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\eliminar.jpg" />
+    <Content Include="Imagenes\Farmacia Matute.jpg" />
+    <Content Include="Imagenes\farmacia.jpg" />
+    <Content Include="Imagenes\farmacia_logo %281%29.ico" />
+    <Content Include="Imagenes\grabar.jpg" />
+    <Content Include="Imagenes\health_medicine_medical_drugs_icon_140771.ico" />
+    <Content Include="Imagenes\medicine_pills_drugs_icon_149284.ico" />
+    <Content Include="Imagenes\user_icon-icons.com_57997.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
